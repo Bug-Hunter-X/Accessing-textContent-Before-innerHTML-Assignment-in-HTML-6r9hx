@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    // Incorrectly trying to access the content of a div that hasn't been assigned innerHTML 
+    const divContent = document.getElementById("myDiv").textContent; // Bug: Trying to access textContent before setting innerHTML
+    console.log(divContent); //outputs empty string
+    document.getElementById("myDiv").innerHTML = "<p>This is some content</p>";
+    const divContent2 = document.getElementById("myDiv").textContent; 
+    console.log(divContent2); //This outputs correctly
+  </script>
+</body>
+</html>
