@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+  <script>
+    document.getElementById("myDiv").innerHTML = "<p>This is some content</p>"; //innerHTML set before accessing textContent
+    const divContent = document.getElementById("myDiv").textContent;
+    console.log(divContent); //Outputs correctly
+  </script>
+</body>
+</html>
